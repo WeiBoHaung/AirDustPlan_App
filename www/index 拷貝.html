@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+ <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="js/index.js"></script>
+   
+</head>
+
+
+<body  onload="gps.getCurrentPosition();timer.ShowTime();">
+    </div>
+    <!-- Wrapper -->
+    <div id="showbox"></div>
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main">
+            <header>
+                <span class="avatar"><img src="img/avatar.jpg" alt=""/></span>
+                <form action="">
+                    距離最近測站: 
+                    <br>
+                    <span id="txt1" value="" onchange="sent_data.all_data(this.value)"></span>
+                    
+                </form>
+                
+            </header>
+            
+            
+
+            <p>結果: <span id="txtHint" ></span></p>
+            <footer>
+                <ul class="icons">
+                    <li><a href="#" class="fa-twitter">Twitter</a></li>
+                    <li><a href="#" class="fa-instagram">Instagram</a></li>
+                    <li><a href="#" class="fa-facebook">Facebook</a></li>
+                </ul>
+            </footer>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="copyright">
+
+                <li>Design:
+                    <a>
+                        <br>NFU CSIEMASE LAB
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <script>
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function() {
+                document.body.className = document.body.className.replace(/\bis-loading\b/, '');
+            });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+    </script>
+
+</body>
+
+</html>
