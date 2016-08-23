@@ -48,71 +48,73 @@ var app = {
     }
 };
 //圓
-(function ($){
+var draw ={
+    a: function(){
+      $.fn.bekeyProgressbar = function(options){
 
-    $.fn.bekeyProgressbar = function(options){
+          options = $.extend({
+            animate     : true,
+            animateText : true
+          }, options);
 
-        options = $.extend({
-        	animate     : true,
-          animateText : true
-        }, options);
-
-        var $this = $(this);
-      
-        var $progressBar = $this;
-        var $progressCount = $progressBar.find('.ProgressBar-percentage--count');
-        var $circle = $progressBar.find('.ProgressBar-circle');
-        // var percentageProgress = $progressBar.attr('data-progress');
-        var percentageProgress = $progressBar.attr('value');
+          var $this = $(this);
         
-        var percentageRemaining = (100 - percentageProgress);
-        // var percentageText = $progressCount.parent().attr('data-progress');
-        var percentageText = $progressCount.parent().attr('value');
+          var $progressBar = $this;
+          var $progressCount = $progressBar.find('.ProgressBar-percentage--count');
+          var $circle = $progressBar.find('.ProgressBar-circle');
+          // var percentageProgress = $progressBar.attr('data-progress');
+          var percentageProgress = $progressBar.attr('value');
+          
+          var percentageRemaining = (100 - percentageProgress);
+          // var percentageText = $progressCount.parent().attr('data-progress');
+          var percentageText = $progressCount.parent().attr('value');
+          
         
-      
-        //Calcule la circonférence du cercle
-        var radius = $circle.attr('r');
-        var diameter = radius * 2;
-        var circumference = Math.round(Math.PI * diameter);
+          //Calcule la circonférence du cercle
+          var radius = $circle.attr('r');
+          var diameter = radius * 2;
+          var circumference = Math.round(Math.PI * diameter);
 
-        //Calcule le pourcentage d'avancement
-        var percentage =  circumference * percentageRemaining / 100;
+          //Calcule le pourcentage d'avancement
+          var percentage =  circumference * percentageRemaining / 100;
 
-        $circle.css({
-          'stroke-dasharray' : circumference,
-          'stroke-dashoffset' : percentage
-        })
-        
-        //Animation de la barre de progression
-        if(options.animate === true){
           $circle.css({
-            'stroke-dashoffset' : circumference
-          }).animate({
+            'stroke-dasharray' : circumference,
             'stroke-dashoffset' : percentage
-          }, 3000 )
-        }
-        
-        //Animation du texte (pourcentage)
-        if(options.animateText == true){
- 
-          $({ Counter: 0 }).animate(
-            { Counter: percentageText },
-            { duration: 3000,
-             step: function () {
-               $progressCount.text( Math.ceil(this.Counter) + '');
-             }
-            });
-
-        }else{
-          $progressCount.text( percentageText + '');
-        }
-      
-    };
-
-})(jQuery);
-
-$(document).ready(function(){
+          })
+          
+          //Animation de la barre de progression
+          if(options.animate === true){
+            $circle.css({
+              'stroke-dashoffset' : circumference
+            }).animate({
+              'stroke-dashoffset' : percentage
+            }, 3000 )
+          }
+          
+          //Animation du texte (pourcentage)
+          if(options.animateText == true){
   
+            $({ Counter: 0 }).animate(
+              { Counter: percentageText },
+              { duration: 3000,
+              step: function () {
+                $progressCount.text( Math.ceil(this.Counter) + '');
+              }
+              });
+
+          }else{
+            $progressCount.text( percentageText + '');
+          }
+        
+      };
+    }
+};
+
+
+(jQuery);
+$(document).ready(function(){
+  draw.a();
   $('.ProgressBar--animateNone').bekeyProgressbar({
     animate : false,
     animateText : false
@@ -198,20 +200,19 @@ var sent_data = {
     },
     pm25_data: function(str) {
             var xhttp;
-            // if (str.length == 0) {
-            //     document.getElementById("txtHint").innerHTML = "";
-            //     return;
-            // }
+
             xhttp = new XMLHttpRequest();
-            //xmlhttp.overrideMimeType("text/html;charset=UTF-8");
+            
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
-                   var str = document.getElementById("circle_number");
-                   str.value = "12";
+                   var s = document.getElementById("circle_number");
+                   
+                   draw.a();
                   
 
                   
-                  var circle_color=document.getElementById("circle_color");
+                    var circle_color=document.getElementById("circle_color");
+                    circle_color.style="#9900cc";
                     if (xhttp.responseText<12) 
                     {
                       circle_color.style="#99ff66";
@@ -240,6 +241,7 @@ var sent_data = {
                     {
                       circle_color.style="#9900cc";
                     }
+                    
                     // str.innerHTML=xhttp.responseText;
                    
               }
