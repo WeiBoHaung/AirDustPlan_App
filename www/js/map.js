@@ -1,32 +1,34 @@
 var show_map ={
+    
+    load: function(){
+            google.maps.event.addDomListener(window, 'load', initialize);
+    },
     initialize: function()
     {
-        var myCenter=new google.maps.LatLng(45.434046,12.340284);
-
+        
+        var myCenter=new google.maps.LatLng(23.7450704,120.9513153);
         var mapProp = {
-            center:myCenter,
-            zoom:18,
-            mapTypeId:google.maps.MapTypeId.HYBRID
+        center:myCenter,
+        zoom:8,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
         };
 
         var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-        map.setTilt(0);
-    
-        google.maps.event.addDomListener(window, 'load', initialize);
-    }
-     
 
+        //標籤
+        for (var j=0;j<2;j++)
+        {
+        var marker=new google.maps.Marker({
+        
+        position:myCenter,
+        // icon:'pinkball.png'
+        });
+
+        marker.setMap(map);
+
+        this.load();
+        }
+    }
 
 }
-
-$(document).ready(function(){
-      var mapProp = {
-            center:new google.maps.LatLng(51.508742,-0.120850),
-            zoom:5,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-        };
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-        
-        google.maps.event.addDomListener(window, 'load', initialize);
-
-})
+//  var myCenter=new google.maps.LatLng(a2dv[i][7],a2dv[i][6]);
