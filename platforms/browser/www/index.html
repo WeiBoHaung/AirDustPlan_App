@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <link rel="stylesheet" href="assets/css/main.css" />
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -20,6 +19,18 @@
     <!--圓形動畫-->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <!--換頁-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">    
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+        $(document).on("pagecreate","#pageone",function(){
+            $("p").on("swipeleft",function(){
+                
+                location.href = "./index2.html";
+            });
+        });
+    </script>
     <!--自訂js-->
     <script src="js/index.js"></script>
     
@@ -35,11 +46,11 @@
     <div id="showbox"></div>
     <div id="wrapper">
 
-        <!-- Main -->
-        <section id="main">
+    <!-- Main -->
+    <section id="main">
             
     <header>
-        
+        <!--<div id="googleMap" style="width:100%;height:380px;"></div>-->
         <span class="avatar">
             <!-- data-progress="" -->
             <div class="ProgressBar ProgressBar--animateAll" style="width:100%;" data-progress="60" value="75" id="circle_number">
@@ -49,13 +60,9 @@
                     <circle transform="rotate(0, 100, 100)" class="ProgressBar-circle" id="circle_color" " cx="50%" cy="60" r="60" />
                     <span class="ProgressBar-percentage ProgressBar-percentage--count" style="height:100%" ></span>
             </svg>
-            </div>        
-           
-                
+            </div>                
             <img id="avatar" src="img/avatar.jpg" alt="">
-
-           
-            
+      
         </span>
 
     <form action="" style="font-size:30px;">
@@ -69,7 +76,7 @@
 
     </header>
 
-
+    <div data-role="page" id="pageone" style="height:10px;">
 
     <p style="font-size:20px;">結果: <span id="txtHint"></span></p>
     <footer>
@@ -94,16 +101,6 @@
     </footer>
 
     </div>
-
-    <script>
-        if ('addEventListener' in window) {
-            window.addEventListener('load', function() {
-                document.body.className = document.body.className.replace(/\bis-loading\b/, '');
-            });
-            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-        }
-    </script>
-
 </body>
 
 </html>

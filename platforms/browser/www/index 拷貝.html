@@ -14,57 +14,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="assets/css/main.css" />
- <!--jquery-->
+    <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <!--圓形動畫-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--自訂js-->
     <script src="js/index.js"></script>
-   
+    
+
+    
+
 </head>
 
 
-<body  onload="gps.getCurrentPosition();timer.ShowTime();">
-    </div>
+<body onload="gps.getCurrentPosition();timer.ShowTime();">
+
     <!-- Wrapper -->
     <div id="showbox"></div>
     <div id="wrapper">
 
         <!-- Main -->
         <section id="main">
-            <header>
-                <span class="avatar"><img src="img/avatar.jpg" alt=""/></span>
-                <form action="">
-                    距離最近測站: 
-                    <br>
-                    <span id="txt1" value="" onchange="sent_data.all_data(this.value)"></span>
-                    
-                </form>
+            
+    <header>
+        
+        <span class="avatar">
+            <!-- data-progress="" -->
+            <div class="ProgressBar ProgressBar--animateAll" style="width:100%;" data-progress="60" value="75" id="circle_number">
+            <svg class="ProgressBar-contentCircle" >
+                    <!-- on défini le l'angle et le centre de rotation du cercle -->
+                    <circle transform="rotate(0, 100, 100)" class="ProgressBar-background" cx="50%" cy="60" r="60"  />
+                    <circle transform="rotate(0, 100, 100)" class="ProgressBar-circle" id="circle_color" " cx="50%" cy="60" r="60" />
+                    <span class="ProgressBar-percentage ProgressBar-percentage--count" style="height:100%" ></span>
+            </svg>
+            </div>        
+           
                 
-            </header>
+            <img id="avatar" src="img/avatar.jpg" alt="">
+
+           
             
-            
+        </span>
 
-            <p>結果: <span id="txtHint" ></span></p>
-            <footer>
-                <ul class="icons">
-                    <li><a href="#" class="fa-twitter">Twitter</a></li>
-                    <li><a href="#" class="fa-instagram">Instagram</a></li>
-                    <li><a href="#" class="fa-facebook">Facebook</a></li>
-                </ul>
-            </footer>
-        </section>
+    <form action="" style="font-size:30px;">
+        距離最近測站 :
+        <br>
+        <span id="txt1"></span>
+        <!-- <span id="txt1" value="" ></span> -->
 
-        <!-- Footer -->
-        <footer id="footer">
-            <ul class="copyright">
 
-                <li>Design:
-                    <a>
-                        <br>NFU CSIEMASE LAB
-                    </a>
-                </li>
-            </ul>
-        </footer>
+    </form>
+
+    </header>
+
+
+
+    <p style="font-size:20px;">結果: <span id="txtHint"></span></p>
+    <footer>
+        <ul class="icons">
+            <li><a href="#" class="fa-twitter">Twitter</a></li>
+            <li><a href="#" class="fa-instagram">Instagram</a></li>
+            <li><a href="#" class="fa-facebook">Facebook</a></li>
+        </ul>
+    </footer>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="copyright">
+
+            <li>Design:
+                <a>
+                    <br>NFU CSIEMASE LAB
+                </a>
+            </li>
+        </ul>
+    </footer>
 
     </div>
 

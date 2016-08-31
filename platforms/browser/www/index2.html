@@ -19,73 +19,63 @@
     <!--圓形動畫-->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <!--google map api-->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+ 
+    <script>
+        var myCenter=new google.maps.LatLng(23.7450704,120.9513153);
+
+        function initialize()
+        {
+        var mapProp = {
+        center:myCenter,
+        zoom:8,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+        var marker=new google.maps.Marker({
+        position:myCenter,
+        // icon:'pinkball.png'
+        });
+
+        marker.setMap(map);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);    
+    </script>
     <!--換頁-->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">    
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script>
         $(document).on("pagecreate","#pageone",function(){
-            $("p").on("swipeleft",function(){
-                
-                location.href = "./index2.html";
+            $("p").on("swiperight",function(){          
+                location.href = "./index.html";
             });
         });
     </script>
     <!--自訂js-->
     <script src="js/index.js"></script>
     
-
-    
-
 </head>
 
 
-<body onload="gps.getCurrentPosition();timer.ShowTime();">
+<body >
 
     <!-- Wrapper -->
     <div id="showbox"></div>
     <div id="wrapper">
 
-    <!-- Main -->
-    <section id="main">
+        <!-- Main -->
+        <section id="main">
             
-    <header>
-        <!--<div id="googleMap" style="width:100%;height:380px;"></div>-->
-        <span class="avatar">
-            <!-- data-progress="" -->
-            <div class="ProgressBar ProgressBar--animateAll" style="width:100%;" data-progress="60" value="75" id="circle_number">
-            <svg class="ProgressBar-contentCircle" >
-                    <!-- on défini le l'angle et le centre de rotation du cercle -->
-                    <circle transform="rotate(0, 100, 100)" class="ProgressBar-background" cx="50%" cy="60" r="60"  />
-                    <circle transform="rotate(0, 100, 100)" class="ProgressBar-circle" id="circle_color" " cx="50%" cy="60" r="60" />
-                    <span class="ProgressBar-percentage ProgressBar-percentage--count" style="height:100%" ></span>
-            </svg>
-            </div>                
-            <img id="avatar" src="img/avatar.jpg" alt="">
-      
-        </span>
-
-    <form action="" style="font-size:30px;">
-        距離最近測站 :
-        <br>
-        <span id="txt1"></span>
-        <!-- <span id="txt1" value="" ></span> -->
-
-
-    </form>
-
+    <header id="pageone">
+        
+        <div id="googleMap" style="width:100%;height:500px;"></div>
     </header>
-
-    <div data-role="page" id="pageone" style="height:10px;">
-
-    <p style="font-size:20px;">結果: <span id="txtHint"></span></p>
-    <footer>
-        <ul class="icons">
-            <li><a href="#" class="fa-twitter">Twitter</a></li>
-            <li><a href="#" class="fa-instagram">Instagram</a></li>
-            <li><a href="#" class="fa-facebook">Facebook</a></li>
-        </ul>
-    </footer>
+    <button onclick="location.href = './index.html'">back</button>
     </section>
 
     <!-- Footer -->
@@ -101,6 +91,8 @@
     </footer>
 
     </div>
+
+
 </body>
 
 </html>
