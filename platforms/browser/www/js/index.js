@@ -298,7 +298,7 @@ var gps={
     getCurrentPosition: function(){
      
     //var obj = JSON.parse("../sitename_gps.json");    
-    var a2dv = new this.Array2DVar(100, 10);  // 建立新的 10*10 的二維陣列
+  var a2dv = new this.Array2DVar(100, 10);  // 建立新的 10*10 的二維陣列
   var i=0;
     a2dv[i][0]='臺東';
       a2dv[i][1]='Taitung';
@@ -983,8 +983,6 @@ var gps={
     a2dv[i][5]='彰化縣二林鎮萬合里江山巷1號';
     a2dv[i][6]=120.4096530000;
     a2dv[i][7]=23.9251750000;
-
-
 
 
 
