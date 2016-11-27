@@ -1,69 +1,503 @@
+var name_ch=Array();
+var name_en=Array();
+var address=Array();
+var long=Array();
+var lat=Array();
+ var i=0;
+      name_ch[i]='臺東';
+      name_en[i]='Taitung';
+      address[i]='臺東市中山路276號';
+      long[i]=121.1504500000;
+      lat[i]=22.7553580000;
+  i++;
+      name_ch[i]='臺南';
+      name_en[i]='Tainan';
+      address[i]='臺南市中西區南寧街45號';
+      long[i]=120.2026170000;
+      lat[i]=22.9845810000;
+  i++;
+      name_ch[i]='臺西';
+      name_en[i]='Taixi';
+      address[i]='雲林縣臺西鄉五港路505號';
+      long[i]=120.2028420000;
+      lat[i]=23.7175330000;
+  i++;
+      name_ch[i]='觀音';
+      name_en[i]='Guanyin';
+      address[i]='桃園市觀音區文化路2號';
+      long[i]=121.0827610000;
+      lat[i]=25.0355030000;
+  i++;
+      name_ch[i]='關山';
+      name_en[i]='Guanshan';
+      address[i]='臺東縣關山鎮自強路66號';
+      long[i]=121.1619330000;
+      lat[i]=23.0450830000;
+  i++;
+      name_ch[i]='豐原';
+      name_en[i]='Fengyuan';
+      address[i]='臺中市豐原區水源路150號';
+      long[i]=120.7417110000;
+      lat[i]=24.2565860000;
+  i++;
+      name_ch[i]='龍潭';
+      name_en[i]='Longtan';
+      address[i]='桃園市龍潭區中正路210號';
+      long[i]=121.2163500000;
+      lat[i]=24.8638690000;
+  i++;
+      name_ch[i]='頭份';
+      name_en[i]='Toufen';
+      address[i]='苗栗縣頭份鎮文化街20號';
+      long[i]=120.8985720000;
+      lat[i]=24.6969690000;
+  i++;
+      name_ch[i]='橋頭';
+      name_en[i]='Qiaotou';
+      address[i]='高雄市橋頭區隆豐北路1號';
+      long[i]=120.3056890000;
+      lat[i]=22.7575060000;
+  i++;
+      name_ch[i]='線西';
+      name_en[i]='Xianxi';
+      address[i]='彰化縣線西鄉寓埔村中央路二段145號';
+      long[i]=120.4690610000;
+      lat[i]=24.1316720000;
+  i++;
+      name_ch[i]='潮州';
+      name_en[i]='Chaozhou';
+      address[i]='屏東縣潮州鎮九塊里復興路66號';
+      long[i]=120.5611750000;
+      lat[i]=22.5231080000;
+  i++;
+      name_ch[i]='鳳山';
+      name_en[i]='Fengshan';
+      address[i]='高雄市鳳山區曹公路6號';
+      long[i]=120.3580830000;
+      lat[i]=22.6273920000;
+  i++;
+      name_ch[i]='彰化';
+      name_en[i]='Changhua';
+      address[i]='彰化縣彰化市文心街55號';
+      long[i]=120.5415190000;
+      lat[i]=24.0660000000;
+  i++;
+      name_ch[i]='嘉義';
+      name_en[i]='Chiayi';
+      address[i]='嘉義市西區新民路580號';
+      long[i]=120.4408330000;
+      lat[i]=23.4627780000;
+  i++;
+      name_ch[i]='萬華';
+      name_en[i]='Wanhua';
+      address[i]='臺北市萬華區中華路1段66號';
+      long[i]=121.5079720000;
+      lat[i]=25.0465030000;
+  i++;
+      name_ch[i]='萬里';
+      name_en[i]='Wanli';
+      address[i]='新北市萬里區瑪鋉路221號';
+      long[i]=121.6898810000;
+      lat[i]=25.1796670000;
+  i++;
+      name_ch[i]='楠梓';
+      name_en[i]='Nanzi';
+      address[i]='高雄市楠梓區楠梓路262號';
+      long[i]=120.3282890000;
+      lat[i]=22.7336670000;
+  i++;
+      name_ch[i]='新營';
+      name_en[i]='Xinying';
+      address[i]='臺南市新營區中正路4號';
+      long[i]=120.3172500000;
+      lat[i]=23.3056330000;
+  i++;
+      name_ch[i]='新港';
+      name_en[i]='Xingang';
+      address[i]='嘉義縣新港鄉登雲路105號';
+      long[i]=120.3455310000;
+      lat[i]=23.5548390000;
+  i++;
+      name_ch[i]='新莊';
+      name_en[i]='Xinzhuang';
+      address[i]='新北市新莊區中正路510號';
+      long[i]=121.4325000000;
+      lat[i]=25.0379720000;
+  i++;
+      name_ch[i]='新店';
+      name_en[i]='Xindian';
+      address[i]='新北市新店區民族路108號';
+      long[i]=121.5377780000;
+      lat[i]=24.9772220000;
+  i++;
+      name_ch[i]='新竹';
+      name_en[i]='Hsinchu';
+      address[i]='新竹市民族路33號';
+      long[i]=120.9720750000;
+      lat[i]=24.8056190000;
+  i++;
+      name_ch[i]='陽明';
+      name_en[i]='Yangming';
+      address[i]='臺北市北投區竹子湖路111號';
+      long[i]=121.5295830000;
+      lat[i]=25.1827220000;
+  i++;
+      name_ch[i]='菜寮';
+      name_en[i]='Cailiao';
+      address[i]='新北市三重區中正北路163號';
+      long[i]=121.4810280000;
+      lat[i]=25.0689500000;
+  i++;
+      name_ch[i]='善化';
+      name_en[i]='Shanhua';
+      address[i]='臺南市善化區益名寮60號';
+      long[i]=120.2971420000;
+      lat[i]=23.1150970000;
+  i++;
+      name_ch[i]='湖口';
+      name_en[i]='Hukou';
+      address[i]='新竹縣湖口鄉成功路360號';
+      long[i]=121.0386530000;
+      lat[i]=24.9001420000;
+  i++;
+      name_ch[i]='復興';
+      name_en[i]='Fuxing';
+      address[i]='高雄市前鎮區民權二路331號';
+      long[i]=120.3120170000;
+      lat[i]=22.6087110000;
+  i++;
+      name_ch[i]='麥寮';
+      name_en[i]='Mailiao';
+      address[i]='雲林縣麥寮鄉中興路115號';
+      long[i]=120.2518250000;
+      lat[i]=23.7535060000;
+  i++;
+      name_ch[i]='淡水';
+      name_en[i]='Tamsui';
+      address[i]='新北市淡水區中正東路42巷6號';
+      long[i]=121.4492390000;
+      lat[i]=25.1645000000;
+  i++;
+      name_ch[i]='崙背';
+      name_en[i]='Lunbei';
+      address[i]='雲林縣崙背鄉南陽村大成路91號';
+      long[i]=120.3487420000;
+      lat[i]=23.7575470000;
+  i++;
+      name_ch[i]='基隆';
+      name_en[i]='Keelung';
+      address[i]='基隆市東信路324號';
+      long[i]=121.7600560000;
+      lat[i]=25.1291670000;
+  i++;
+      name_ch[i]='馬祖';
+      name_en[i]='Matsu';
+      address[i]='連江縣南竿鄉介壽村13號';
+      long[i]=119.9498750000;
+      lat[i]=26.1604690000;
+  i++;
+      name_ch[i]='馬公';
+      name_en[i]='Magong';
+      address[i]='澎湖縣馬公市中正路115號';
+      long[i]=119.5661580000;
+      lat[i]=23.5690310000;
+  i++;
+      name_ch[i]='桃園';
+      name_en[i]='Taoyuan';
+      address[i]='桃園市桃園區成功路二段144號';
+      long[i]=121.3199640000;
+      lat[i]=24.9947890000;
+  i++;
+      name_ch[i]='埔里';
+      name_en[i]='Puli';
+      address[i]='南投縣埔里鎮西安路一段193號';
+      long[i]=120.9679030000;
+      lat[i]=23.9688420000;
+  i++;
+      name_ch[i]='苗栗';
+      name_en[i]='Miaoli';
+      address[i]='苗栗市縣府路100號';
+      long[i]=120.8202000000;
+      lat[i]=24.5652690000;
+  i++;
+      name_ch[i]='美濃';
+      name_en[i]='Meinong';
+      address[i]='高雄市美濃區中壇里忠孝路19號';
+      long[i]=120.5305420000;
+      lat[i]=22.8835830000;
+  i++;
+      name_ch[i]='恆春';
+      name_en[i]='Hengchun';
+      address[i]='屏東縣恆春鎮公園路44號';
+      long[i]=120.7889280000;
+      lat[i]=21.9580690000;
+  i++;
+      name_ch[i]='屏東';
+      name_en[i]='Pingtung';
+      address[i]='屏東市蘇州街75號';
+      long[i]=120.4880330000;
+      lat[i]=22.6730810000;
+  i++;
+      name_ch[i]='南投';
+      name_en[i]='Nantou';
+      address[i]='南投市南陽路269號';
+      long[i]=120.6853060000;
+      lat[i]=23.9130000000;
+  i++;
+      name_ch[i]='前鎮';
+      name_en[i]='Qianzhen';
+      address[i]='高雄市前鎮區中山三路43號';
+      long[i]=120.3075640000;
+      lat[i]=22.6053860000;
+  i++;
+      name_ch[i]='前金';
+      name_en[i]='Qianjin';
+      address[i]='高雄市前金區河南二路196號';
+      long[i]=120.2880860000;
+      lat[i]=22.6325670000;
+  i++;
+      name_ch[i]='金門';
+      name_en[i]='Kinmen';
+      address[i]='金門縣金城鎮民權路32號';
+      long[i]=118.3122560000;
+      lat[i]=24.4321330000;
+  i++;
+      name_ch[i]='花蓮';
+      name_en[i]='Hualien';
+      address[i]='花蓮市中正路210號';
+      long[i]=121.5997690000;
+      lat[i]=23.9713060000;
+  i++;
+      name_ch[i]='松山';
+      name_en[i]='Songshan';
+      address[i]='臺北市松山區八德路四段746號';
+      long[i]=121.5786110000;
+      lat[i]=25.0500000000;
+  i++;
+      name_ch[i]='板橋';
+      name_en[i]='Banqiao';
+      address[i]='新北市板橋區文化路一段25號';
+      long[i]=121.4586670000;
+      lat[i]=25.0129720000;
+  i++;
+      name_ch[i]='林園';
+      name_en[i]='Linyuan';
+      address[i]='高雄市林園區北汕路58巷2號';
+      long[i]=120.4117500000;
+      lat[i]=22.4795000000;
+  i++;
+      name_ch[i]='林口';
+      name_en[i]='Linkou';
+      address[i]='新北市林口區民治路25號';
+      long[i]=121.3768690000;
+      lat[i]=25.0771970000;
+  i++;
+      name_ch[i]='忠明';
+      name_en[i]='Zhongming';
+      address[i]='臺中市南屯區公益路二段296號';
+      long[i]=120.6410920000;
+      lat[i]=24.1519580000;
+  i++;
+      name_ch[i]='宜蘭';
+      name_en[i]='Yilan';
+      address[i]='宜蘭縣宜蘭市復興路二段77號';
+      long[i]=121.7463940000;
+      lat[i]=24.7479170000;
+  i++;
+      name_ch[i]='沙鹿';
+      name_en[i]='Shalu';
+      address[i]='臺中市沙鹿區英才路150號';
+      long[i]=120.5687940000;
+      lat[i]=24.2256280000;
+  i++;
+      name_ch[i]='西屯';
+      name_en[i]='Xitun';
+      address[i]='臺中市西屯區安和路1號';
+      long[i]=120.6169170000;
+      lat[i]=24.1621970000;
+  i++;
+      name_ch[i]='竹東';
+      name_en[i]='Zhudong';
+      address[i]='新竹縣竹東鎮榮樂里三民街70號';
+      long[i]=121.0889030000;
+      lat[i]=24.7406440000;
+  i++;
+      name_ch[i]='竹山';
+      name_en[i]='Zhushan';
+      address[i]='南投縣竹山鎮大明路666號';
+      long[i]=120.6773060000;
+      lat[i]=23.7563890000;
+  i++;
+      name_ch[i]='汐止';
+      name_en[i]='Xizhi';
+      address[i]='新北市汐止區樟樹一路141巷2號';
+      long[i]=121.6423000000;
+      lat[i]=25.0671310000;
+  i++;
+      name_ch[i]='朴子';
+      name_en[i]='Puzi';
+      address[i]='嘉義縣朴子市光復路34號';
+      long[i]=120.2473500000;
+      lat[i]=23.4653080000;
+  i++;
+      name_ch[i]='安南';
+      name_en[i]='Annan';
+      address[i]='臺南市安南區安和路三段193號';
+      long[i]=120.2175000000;
+      lat[i]=23.0481970000;
+  i++;
+      name_ch[i]='永和';
+      name_en[i]='Yonghe';
+      address[i]='新北市永和區永和路光復路交口';
+      long[i]=121.5163060000;
+      lat[i]=25.0170000000;
+  i++;
+      name_ch[i]='平鎮';
+      name_en[i]='Pingzhen';
+      address[i]='桃園市平鎮區文化街189號';
+      long[i]=121.2039860000;
+      lat[i]=24.9527860000;
+  i++;
+      name_ch[i]='左營';
+      name_en[i]='Zuoying';
+      address[i]='高雄市左營區翠華路687號';
+      long[i]=120.2929170000;
+      lat[i]=22.6748610000;
+  i++;
+      name_ch[i]='古亭';
+      name_en[i]='Guting';
+      address[i]='臺北市大安區羅斯福路三段153號';
+      long[i]=121.5295560000;
+      lat[i]=25.0206080000;
+  i++;
+      name_ch[i]='冬山';
+      name_en[i]='Dongshan';
+      address[i]='宜蘭縣冬山鄉南興村照安路26號';
+      long[i]=121.7929280000;
+      lat[i]=24.6322030000;
+  i++;
+      name_ch[i]='斗六';
+      name_en[i]='Douliu';
+      address[i]='雲林縣斗六市民生路224號';
+      long[i]=120.5449940000;
+      lat[i]=23.7118530000;
+  i++;
+      name_ch[i]='仁武';
+      name_en[i]='Renwu';
+      address[i]='高雄市仁武區八卦里永仁街555號';
+      long[i]=120.3326310000;
+      lat[i]=22.6890560000;
+  i++;
+      name_ch[i]='中壢';
+      name_en[i]='Zhongli';
+      address[i]='桃園市中壢區延平路622號';
+      long[i]=121.2216670000;
+      lat[i]=24.9532780000;
+  i++;
+      name_ch[i]='中山';
+      name_en[i]='Zhongshan';
+      address[i]='臺北市中山區林森北路511號';
+      long[i]=121.5265280000;
+      lat[i]=25.0623610000;
+  i++;
+      name_ch[i]='小港';
+      name_en[i]='Xiaogang';
+      address[i]='高雄市小港區平和南路185號';
+      long[i]=120.3377360000;
+      lat[i]=22.5658330000;
+  i++;
+      name_ch[i]='大寮';
+      name_en[i]='Daliao';
+      address[i]='高雄市大寮區潮寮路61號';
+      long[i]=120.4250810000;
+      lat[i]=22.5657470000;
+  i++;
+      name_ch[i]='大園';
+      name_en[i]='Dayuan';
+      address[i]='桃園市大園區中正東路160號';
+      long[i]=121.2018110000;
+      lat[i]=25.0603440000;
+  i++;
+      name_ch[i]='大里';
+      name_en[i]='Dali';
+      address[i]='臺中市大里區大新街36號';
+      long[i]=120.6776890000;
+      lat[i]=24.0996110000;
+  i++;
+      name_ch[i]='大同';
+      name_en[i]='Datong';
+      address[i]='臺北市大同區重慶北路三段2號';
+      long[i]=121.5133110000;
+      lat[i]=25.0632000000;
+  i++;
+      name_ch[i]='士林';
+      name_en[i]='Shilin';
+      address[i]='臺北市北投區文林北路155號';
+      long[i]=121.5153890000;
+      lat[i]=25.1054170000;
+  i++;
+      name_ch[i]='土城';
+      name_en[i]='Tucheng';
+      address[i]='新北市土城區學府路一段241號';
+      long[i]=121.4518610000;
+      lat[i]=24.9825280000;
+  i++;
+      name_ch[i]='三義';
+      name_en[i]='Sanyi';
+      address[i]='苗栗縣三義鄉西湖村上湖61-1號';
+      long[i]=120.7588330000;
+      lat[i]=24.3829420000;
+  i++;
+      name_ch[i]='三重';
+      name_en[i]='Sanchong';
+      address[i]='新北市三重區三和路重陽路交口';
+      long[i]=121.4938060000;
+      lat[i]=25.0726110000;
+
+
+
+
 var show_map ={
+    
     
     load: function(){
             google.maps.event.addDomListener(window, 'load', initialize);
     },
     initialize: function()
     {
+        var marker=Array();
+        var myCenter=Array();
+        var mapProp=Array();
+       for(var i=0;i<=74;i++)
+       {
+        myCenter[i]=new google.maps.LatLng(lat[i],long[i]);
         
-        var myCenter=new google.maps.LatLng(23.7450704,120.9513153);
-        var mapProp = {
-        center:myCenter,
-        zoom:8,
-        mapTypeId:google.maps.MapTypeId.ROADMAP
+        mapProp[i] = {
+        center:myCenter[i],
+        zoom:7,
+        mapTypeId:google.maps.MapTypeId.TERRAIN
         };
 
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp[i]);
 
         //標籤
-        for (var j=0;j<2;j++)
-        {
-        var marker=new google.maps.Marker({
+       
+        marker[i]=new google.maps.Marker({
         
-        position:myCenter,
-        // icon:'pinkball.png'
+        position:myCenter[i],
+        
         });
 
-        marker.setMap(map);
-
-        this.load();
         }
+        for(var i=74;i>=0;i--)
+        {
+            marker[i].setMap(map);            
+        }
+    
     }
 
 };
-/*
-var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var labelIndex = 0;
 
-function initialize() {
-var bangalore = { lat: 12.97, lng: 77.59 };
-var map = new google.maps.Map(document.getElementById('googleMap'), {
-    zoom: 12,
-    center: bangalore
-});
-
-// This event listener calls addMarker() when the map is clicked.
-google.maps.event.addListener(map, 'click', function(event) {
-    addMarker(event.latLng, map);
-});
-
-// Add a marker at the center of the map.
-addMarker(bangalore, map);
-}
-
-// Adds a marker to the map.
-function addMarker(location, map) {
-// Add the marker at the clicked location, and add the next-available label
-// from the array of alphabetical characters.
-var marker = new google.maps.Marker({
-        position: location,
-        label: labels[labelIndex++ % labels.length],
-        map: map
-    });
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-*/
 var taipei = new google.maps.LatLng(25.08, 121.45);   
 if(window.navigator.geolocation){   
     
